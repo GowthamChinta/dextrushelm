@@ -1,0 +1,25 @@
+{{- if eq ( .Values.ingressResource.createSecret | toString ) "yes" }}
+
+apiVersion: v1
+data:
+  {{- if eq ( .Values.ingressResource.throughFile | toString ) "yes" }}
+  {{- $root := . -}}
+  {{- range $path, $bytes := .Files.Glob "secrets/cachain.crt" }}
+  tls.crt: '{{ $root.Files.Get $path | b64enc }}'
+  {{- end }}
+  {{- $root := . -}}
+  {{- range $path, $bytes := .Files.Glob "secrets/private.key" }}
+  tls.key: '{{ $root.Files.Get $path | b64enc }}'
+  {{- end }}
+  {{- else }}
+  tls.crt: {{ .Values.ingressResource.cachainCRT }}
+  tls.key: {{ .Values.ingressResource.privateKey }}
+  {{- end }}
+kind: Secret
+metadata:
+  name: {{ .Values.name }}-cert
+  namespace: {{ .Values.namespace | default "default" }}
+type: kubernetes.io/tls
+
+{{- else }}
+{{- end }}
