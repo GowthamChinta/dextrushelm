@@ -7,14 +7,14 @@ name: "test"
 namespace: "test"
 
 image:
-  dextrusuiImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/dextrusui:cluster-0.3"
-  dextrusprodImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/dextrusprod:cluster-0.3"
+  dextrusuiImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/dextrusui:cluster-0.1"
+  dextrusprodImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/dextrusprod:cluster-0.1"
   dbexplorerImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/dbexplorer:cluster-0.1"
-  dextruswebImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/dextrusweb:cluster-0.3"
+  dextruswebImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/dextrusweb:cluster-0.1"
   twitterImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/twitter:cluster-0.1"
   wranglerImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/wrangler:cluster-0.1"
   systemvariablesImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/systemvariables:cluster-0.1"
-  streamingImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/streaming:cluster-0.2"
+  streamingImage: "157557265942.dkr.ecr.ap-south-1.amazonaws.com/streaming:cluster-0.1"
 
   # Location for Kafka application images
   kafkaImage: "confluentinc/cp-kafka:5.5.0"
