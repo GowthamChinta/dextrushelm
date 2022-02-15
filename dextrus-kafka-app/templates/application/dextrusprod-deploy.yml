@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.name }}-dextrusprod-deploy
+  name: dextrusprod-deploy
   labels:
-    app: {{ .Values.name }}-dextrusprod
+    app: dextrusprod
   namespace: {{ .Values.namespace | default "default" }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.name }}-dextrusprod
+      app: dextrusprod
   template:
     metadata:
       labels:
-        app: {{ .Values.name }}-dextrusprod
+        app: dextrusprod
     spec:
       volumes:
         - name: efs-pvc
@@ -29,9 +29,9 @@ spec:
             - configMap:
                 name: application-cm
             - configMap:
-                name: {{ .Values.name }}-dextrusprod-appdev-cm             
+                name: dextrusprod-appdev-cm             
       containers:
-      - name: {{ .Values.name }}-dextrusprod
+      - name: dextrusprod
         image: {{ .Values.image.dextrusprodImage }}
         imagePullPolicy: Always
         ports:

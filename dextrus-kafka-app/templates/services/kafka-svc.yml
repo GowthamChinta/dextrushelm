@@ -6,9 +6,7 @@ metadata:
   namespace: {{ .Values.namespace | default "default" }}
   labels:
     app: kafka
-    #  annotations:
-    #    "helm.sh/hook-weight": "2"
-    
+    netpol: kafka 
 spec:
   type: ClusterIP
   ports:

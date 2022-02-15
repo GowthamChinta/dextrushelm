@@ -65,5 +65,5 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: {{ .Values.name }}-twitter-appdev-cm
+  name: twitter-appdev-cm
   namespace: {{ .Values.namespace | default "default" }}

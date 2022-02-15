@@ -6,19 +6,18 @@ metadata:
   namespace: {{ .Values.namespace | default "default" }}
   labels:
     app: connect
-    #  annotations:
-    #    "helm.sh/hook": "pre-install"
-    #    "helm.sh/hook-weight": "100"
-    
+    netpol: kafka 
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: connect
+      netpol: kafka
   template:
     metadata:
       labels:
         app: connect
+        netpol: kafka
     spec:
       affinity:
         nodeAffinity:

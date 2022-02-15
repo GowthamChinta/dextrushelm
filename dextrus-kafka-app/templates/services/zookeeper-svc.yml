@@ -7,6 +7,7 @@ metadata:
   namespace: {{ .Values.namespace | default "default" }}
   labels:
     app: zookeper
+    netpol: kafka
     #  annotations:
     #    "helm.sh/hook-weight": "1"
 spec:

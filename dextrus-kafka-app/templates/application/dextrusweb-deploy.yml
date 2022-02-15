@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.name }}-dextrusweb-deploy
+  name: dextrusweb-deploy
   labels:
-    app: {{ .Values.name }}-dextrusweb
+    app: dextrusweb
   namespace: {{ .Values.namespace | default "default" }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.name }}-dextrusweb
+      app: dextrusweb
   template:
     metadata:
       labels:
-        app: {{ .Values.name }}-dextrusweb
+        app: dextrusweb
     spec:
       containers:
-        - name: {{ .Values.name }}-dextrusweb
+        - name: dextrusweb
           image: {{ .Values.image.dextruswebImage }}
           imagePullPolicy: Always
           ports:
@@ -40,7 +40,7 @@ spec:
           projected:
             sources:
             - configMap:
-                name: {{ .Values.name }}-dextrusweb-appdev-cm
+                name: dextrusweb-appdev-cm
             - configMap:
                 name: application-cm
             - configMap:

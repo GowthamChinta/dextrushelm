@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: {{ .Values.name }}-twitter-svc
+  name: twitter-svc
   namespace: {{ .Values.namespace | default "default" }}
 spec:
   type: {{ .Values.twitter.service.type | default "ClusterIP" }}
   selector:
-    app: {{ .Values.name }}-twitter
+    app: twitter
   ports:
   - protocol: TCP
     port: 80

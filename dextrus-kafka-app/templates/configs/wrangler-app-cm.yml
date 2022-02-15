@@ -82,7 +82,7 @@ data:
         bucket: {{ .Values.s3.bucket_name }}
         endPoint: s3.{{ .Values.s3.region }}.amazonaws.com
       driver:
-        host: dextrusweb-headless-service
+        host: dextrusweb-headless-svc
         port: 44103
         memory: 1g
         memoryOverhead: 512
@@ -111,5 +111,5 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: {{ .Values.name }}-wrangler-app-cm
+  name: wrangler-app-cm
   namespace: {{ .Values.namespace | default "default" }}

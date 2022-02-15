@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: {{ .Values.name }}-dbexplorer-sparkui-svc
+  name: dbexplorer-sparkui-svc
   namespace: {{ .Values.namespace | default "default" }}
 spec:
   type: {{ .Values.dbexplorer.spark_service.type | default "ClusterIP" }}
   selector:
-    app: {{ .Values.name }}-dbexplorer
+    app: dbexplorer
   ports:
     - protocol: TCP
       port: 80

@@ -62,5 +62,5 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: {{ .Values.name }}-dextrusprod-appdev-cm
+  name: dextrusprod-appdev-cm
   namespace: {{ .Values.namespace | default "default" }}

@@ -35,7 +35,7 @@ data:
     spark.s3.accessKey={{ .Values.s3.access_key }}
     spark.s3.secretKey={{ .Values.s3.secret_key }}
     spark.s3.endPoint=s3.{{ .Values.s3.region }}.amazonaws.com
-    spark.driver.host=streaming-headless-service
+    spark.driver.host=streaming-headless-svc
     spark.driver.port=44103
     #spark.jars=s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/abris_2.12-4.0.0.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/aws-java-sdk-1.7.4.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/common-config-5.5.1.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/commons-pool2-2.6.2.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/common-utils-5.5.1.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/hadoop-aws-2.7.4.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/jets3t-0.9.4.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/kafka-avro-serializer-5.5.1.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/kafka-clients-2.4.1.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/kafka-schema-registry-client-5.5.1.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/kafka-schema-serializer-5.5.1.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/ojdbc8-19.3.0.0.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/snowflake-jdbc-3.12.13.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/spark-avro_2.12-3.0.1.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/spark-snowflake_2.12-2.8.2-spark_3.0.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/spark-sql-kafka-0-10_2.12-3.0.1.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/spark-streaming-kafka-0-10_2.12-3.0.1.jar,s3a://{{ .Values.s3.bucket_name }}/SparkDependentsStreaming/spark-token-provider-kafka-0-10_2.12-3.0.1.jar
     #spark.jars=/sparkstreaming-driver-destrux-1.0.jar,/spark-sql-kafka-0-10_2.12-3.0.1.jar,/kafka-clients-2.4.1.jar
@@ -87,5 +87,5 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: {{ .Values.name}}-streaming-app-cm
+  name: streaming-app-cm
   namespace: {{ .Values.namespace | default "default" }}

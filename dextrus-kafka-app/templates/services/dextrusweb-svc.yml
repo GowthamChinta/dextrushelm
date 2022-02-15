@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: {{ .Values.name }}-dextrusweb-svc
+  name: dextrusweb-svc
   namespace: {{ .Values.namespace | default "default" }}
 spec:
   type: {{ .Values.dextrusweb.service.type | default "ClusterIP" }}
   selector:
-    app: {{ .Values.name }}-dextrusweb
+    app: dextrusweb
   ports:
   - protocol: TCP
     port: 80
